@@ -17,7 +17,7 @@ import java.util.concurrent.Executors;
 
 @Component
 public class MessageDispatcher {
-    Logger logger = LoggerFactory.getLogger(MessageHandler.class);
+    private Logger logger = LoggerFactory.getLogger(MessageHandler.class);
     private final int CORE_SIZE = Runtime.getRuntime().availableProcessors();
     private Hashtable<String, MessageHandler> handlerMap;
     private ExecutorService[] executors = new ExecutorService[CORE_SIZE];
@@ -30,7 +30,6 @@ public class MessageDispatcher {
             executors[i] = executor;
         }
     }
-
     public void addMessageTask(Msg msg) {
         if(handlerMap == null) {
             handlerMap = new Hashtable<>(SpringContext.getBeansOfType(MessageHandler.class));
