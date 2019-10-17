@@ -1,7 +1,6 @@
 package cn.balalals.gserver.netty.handler;
 
 import cn.balalals.gserver.SpringContext;
-import cn.balalals.gserver.dispatch.CommandTask;
 import cn.balalals.gserver.protobuf.Msg;
 import io.netty.channel.ChannelHandlerContext;
 import io.netty.channel.SimpleChannelInboundHandler;
@@ -16,7 +15,8 @@ public class MessageDispatchChannel extends SimpleChannelInboundHandler<Msg> {
     }
     @Override
     protected void channelRead0(ChannelHandlerContext channelHandlerContext, Msg msg) {
-        SpringContext.getMessageDispatcher().addMessageTask(new CommandTask(msg));
+//        SpringContext.getMessageDispatcher().addMessageTask(new CommandTask(msg));
+        SpringContext.getMessageDispatcher().addMessageTask(msg);
     }
 
     @Override
