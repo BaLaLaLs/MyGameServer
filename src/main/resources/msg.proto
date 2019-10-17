@@ -1,0 +1,23 @@
+syntax = "proto3";
+option java_package = "cn.balalals.im.protobuf";
+option java_multiple_files = true;
+
+enum MsgType {
+    LOGIN = 0;
+    LOGOUT = 1;
+    SEND_MSG = 2;
+}
+message Msg {
+    MsgType msgType = 1;
+    bytes content = 2;
+}
+message LoginMsg {
+    string account = 1;
+    string password = 2;
+}
+message LogoutMsg {
+    string time = 1;
+}
+message SendMsg {
+    string msg = 1;
+}
