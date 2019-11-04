@@ -1,7 +1,7 @@
-import cn.balalals.gserver.netty.handler.MessageDispatchChannel;
-import cn.balalals.gserver.protobuf.LoginMsg;
-import cn.balalals.gserver.protobuf.Msg;
-import cn.balalals.gserver.protobuf.MsgType;
+import cn.balalals.game_server.netty.handler.MessageDispatchChannel;
+import cn.balalals.game_server.protobuf.LoginMsg;
+import cn.balalals.game_server.protobuf.Msg;
+import cn.balalals.game_server.protobuf.MsgType;
 import io.netty.channel.embedded.EmbeddedChannel;
 import org.junit.jupiter.api.Test;
 
