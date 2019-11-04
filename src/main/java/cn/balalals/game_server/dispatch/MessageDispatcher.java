@@ -58,6 +58,7 @@ public class MessageDispatcher {
         @Override
         public void run() {
             try {
+//                messageHandler.getClass().getMethod("exec", msg.getClass());
                 messageHandler.exec(messageHandler.parseFrom(msg.getContent()));
             } catch (InvalidProtocolBufferException e) {
                 e.printStackTrace();

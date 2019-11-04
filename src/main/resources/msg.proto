@@ -18,6 +18,10 @@ message LoginMsg {
 message LogoutMsg {
     string time = 1;
 }
+message Register {
+    string account = 1;
+    string password = 2;
+}
 message SendMsg {
     string msg = 1;
 }

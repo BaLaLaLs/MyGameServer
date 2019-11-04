@@ -15,7 +15,6 @@ public class MessageDispatchChannel extends SimpleChannelInboundHandler<Msg> {
     }
     @Override
     protected void channelRead0(ChannelHandlerContext channelHandlerContext, Msg msg) {
-//        SpringContext.getMessageDispatcher().addMessageTask(new CommandTask(msg));
         SpringContext.getMessageDispatcher().addMessageTask(msg);
     }
 
