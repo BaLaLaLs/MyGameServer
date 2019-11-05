@@ -4,75 +4,94 @@
 package cn.balalals.game_server.protobuf;
 
 public final class MsgOuterClass {
-    private MsgOuterClass() {
-    }
+  private MsgOuterClass() {}
+  public static void registerAllExtensions(
+      com.google.protobuf.ExtensionRegistryLite registry) {
+  }
 
-    public static void registerAllExtensions(
-            com.google.protobuf.ExtensionRegistryLite registry) {
-    }
-
-    public static void registerAllExtensions(
-            com.google.protobuf.ExtensionRegistry registry) {
-        registerAllExtensions(
-                (com.google.protobuf.ExtensionRegistryLite) registry);
-    }
-
-    static final com.google.protobuf.Descriptors.Descriptor
-            internal_static_Msg_descriptor;
-    static final
+  public static void registerAllExtensions(
+      com.google.protobuf.ExtensionRegistry registry) {
+    registerAllExtensions(
+        (com.google.protobuf.ExtensionRegistryLite) registry);
+  }
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_Msg_descriptor;
+  static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-            internal_static_Msg_fieldAccessorTable;
-    static final com.google.protobuf.Descriptors.Descriptor
-            internal_static_LoginMsg_descriptor;
-    static final
+      internal_static_Msg_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_LoginMsg_descriptor;
+  static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-            internal_static_LoginMsg_fieldAccessorTable;
-    static final com.google.protobuf.Descriptors.Descriptor
-            internal_static_LogoutMsg_descriptor;
-    static final
+      internal_static_LoginMsg_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_LogoutMsg_descriptor;
+  static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-            internal_static_LogoutMsg_fieldAccessorTable;
+      internal_static_LogoutMsg_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_Register_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_Register_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_SendMsg_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_SendMsg_fieldAccessorTable;
 
-    public static com.google.protobuf.Descriptors.FileDescriptor
-    getDescriptor() {
-        return descriptor;
-    }
+  public static com.google.protobuf.Descriptors.FileDescriptor
+      getDescriptor() {
+    return descriptor;
+  }
+  private static  com.google.protobuf.Descriptors.FileDescriptor
+      descriptor;
+  static {
+    java.lang.String[] descriptorData = {
+      "\n\tmsg.proto\"1\n\003Msg\022\031\n\007msgType\030\001 \001(\0162\010.Ms" +
+      "gType\022\017\n\007content\030\002 \001(\014\"-\n\010LoginMsg\022\017\n\007ac" +
+      "count\030\001 \001(\t\022\020\n\010password\030\002 \001(\t\"\031\n\tLogoutM" +
+      "sg\022\014\n\004time\030\001 \001(\t\"-\n\010Register\022\017\n\007account\030" +
+      "\001 \001(\t\022\020\n\010password\030\002 \001(\t\"\026\n\007SendMsg\022\013\n\003ms" +
+      "g\030\001 \001(\t*.\n\007MsgType\022\t\n\005LOGIN\020\000\022\n\n\006LOGOUT\020" +
+      "\001\022\014\n\010SEND_MSG\020\002B$\n cn.balalals.game_serv" +
+      "er.protobufP\001b\006proto3"
+    };
+    descriptor = com.google.protobuf.Descriptors.FileDescriptor
+      .internalBuildGeneratedFileFrom(descriptorData,
+        new com.google.protobuf.Descriptors.FileDescriptor[] {
+        });
+    internal_static_Msg_descriptor =
+      getDescriptor().getMessageTypes().get(0);
+    internal_static_Msg_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_Msg_descriptor,
+        new java.lang.String[] { "MsgType", "Content", });
+    internal_static_LoginMsg_descriptor =
+      getDescriptor().getMessageTypes().get(1);
+    internal_static_LoginMsg_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_LoginMsg_descriptor,
+        new java.lang.String[] { "Account", "Password", });
+    internal_static_LogoutMsg_descriptor =
+      getDescriptor().getMessageTypes().get(2);
+    internal_static_LogoutMsg_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_LogoutMsg_descriptor,
+        new java.lang.String[] { "Time", });
+    internal_static_Register_descriptor =
+      getDescriptor().getMessageTypes().get(3);
+    internal_static_Register_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_Register_descriptor,
+        new java.lang.String[] { "Account", "Password", });
+    internal_static_SendMsg_descriptor =
+      getDescriptor().getMessageTypes().get(4);
+    internal_static_SendMsg_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_SendMsg_descriptor,
+        new java.lang.String[] { "Msg", });
+  }
 
-    private static com.google.protobuf.Descriptors.FileDescriptor
-            descriptor;
-
-    static {
-        java.lang.String[] descriptorData = {
-                "\n\tmsg.proto\"1\n\003Msg\022\031\n\007msgType\030\001 \001(\0162\010.Ms" +
-                        "gType\022\017\n\007content\030\002 \001(\014\"-\n\010LoginMsg\022\017\n\007ac" +
-                        "count\030\001 \001(\t\022\020\n\010password\030\002 \001(\t\"\031\n\tLogoutM" +
-                        "sg\022\014\n\004time\030\001 \001(\t* \n\007MsgType\022\t\n\005LOGIN\020\000\022\n" +
-                        "\n\006LOGOUT\020\001B\033\n\027cn.balalals.im.protobufP\001b" +
-                        "\006proto3"
-        };
-        descriptor = com.google.protobuf.Descriptors.FileDescriptor
-                .internalBuildGeneratedFileFrom(descriptorData,
-                        new com.google.protobuf.Descriptors.FileDescriptor[]{
-                        });
-        internal_static_Msg_descriptor =
-                getDescriptor().getMessageTypes().get(0);
-        internal_static_Msg_fieldAccessorTable = new
-                com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-                internal_static_Msg_descriptor,
-                new java.lang.String[]{"MsgType", "Content",});
-        internal_static_LoginMsg_descriptor =
-                getDescriptor().getMessageTypes().get(1);
-        internal_static_LoginMsg_fieldAccessorTable = new
-                com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-                internal_static_LoginMsg_descriptor,
-                new java.lang.String[]{"Account", "Password",});
-        internal_static_LogoutMsg_descriptor =
-                getDescriptor().getMessageTypes().get(2);
-        internal_static_LogoutMsg_fieldAccessorTable = new
-                com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-                internal_static_LogoutMsg_descriptor,
-                new java.lang.String[]{"Time",});
-    }
-
-    // @@protoc_insertion_point(outer_class_scope)
+  // @@protoc_insertion_point(outer_class_scope)
 }

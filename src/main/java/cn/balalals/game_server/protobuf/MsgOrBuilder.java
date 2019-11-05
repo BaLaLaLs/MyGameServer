@@ -4,27 +4,23 @@
 package cn.balalals.game_server.protobuf;
 
 public interface MsgOrBuilder extends
-        // @@protoc_insertion_point(interface_extends:Msg)
-        com.google.protobuf.MessageOrBuilder {
+    // @@protoc_insertion_point(interface_extends:Msg)
+    com.google.protobuf.MessageOrBuilder {
 
-    /**
-     * <code>.MsgType msgType = 1;</code>
-     *
-     * @return The enum numeric value on the wire for msgType.
-     */
-    int getMsgTypeValue();
+  /**
+   * <code>.MsgType msgType = 1;</code>
+   * @return The enum numeric value on the wire for msgType.
+   */
+  int getMsgTypeValue();
+  /**
+   * <code>.MsgType msgType = 1;</code>
+   * @return The msgType.
+   */
+  cn.balalals.game_server.protobuf.MsgType getMsgType();
 
-    /**
-     * <code>.MsgType msgType = 1;</code>
-     *
-     * @return The msgType.
-     */
-    cn.balalals.game_server.protobuf.MsgType getMsgType();
-
-    /**
-     * <code>bytes content = 2;</code>
-     *
-     * @return The content.
-     */
-    com.google.protobuf.ByteString getContent();
+  /**
+   * <code>bytes content = 2;</code>
+   * @return The content.
+   */
+  com.google.protobuf.ByteString getContent();
 }

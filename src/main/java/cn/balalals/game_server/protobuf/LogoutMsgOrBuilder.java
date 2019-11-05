@@ -4,21 +4,18 @@
 package cn.balalals.game_server.protobuf;
 
 public interface LogoutMsgOrBuilder extends
-        // @@protoc_insertion_point(interface_extends:LogoutMsg)
-        com.google.protobuf.MessageOrBuilder {
+    // @@protoc_insertion_point(interface_extends:LogoutMsg)
+    com.google.protobuf.MessageOrBuilder {
 
-    /**
-     * <code>string time = 1;</code>
-     *
-     * @return The time.
-     */
-    java.lang.String getTime();
-
-    /**
-     * <code>string time = 1;</code>
-     *
-     * @return The bytes for time.
-     */
-    com.google.protobuf.ByteString
-    getTimeBytes();
+  /**
+   * <code>string time = 1;</code>
+   * @return The time.
+   */
+  java.lang.String getTime();
+  /**
+   * <code>string time = 1;</code>
+   * @return The bytes for time.
+   */
+  com.google.protobuf.ByteString
+      getTimeBytes();
 }
