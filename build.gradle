@@ -39,7 +39,7 @@ group = 'cn.balalala'
 version = '1.0-SNAPSHOT'
 sourceCompatibility = '8'
 
-task testTask(type:Exec, description: "编译proto文件") {
+task protocFile(type:Exec, description: "编译proto文件") {
     workingDir './src/main/resources'
     if (Os.isFamily(Os.FAMILY_WINDOWS)) {
         commandLine 'cmd', '/c', 'protoc.bat'
