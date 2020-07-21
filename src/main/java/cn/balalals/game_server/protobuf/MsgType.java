@@ -20,6 +20,10 @@ public enum MsgType
    * <code>SEND_MSG = 2;</code>
    */
   SEND_MSG(2),
+  /**
+   * <code>REGISTER = 3;</code>
+   */
+  REGISTER(3),
   UNRECOGNIZED(-1),
   ;
 
@@ -35,6 +39,10 @@ public enum MsgType
    * <code>SEND_MSG = 2;</code>
    */
   public static final int SEND_MSG_VALUE = 2;
+  /**
+   * <code>REGISTER = 3;</code>
+   */
+  public static final int REGISTER_VALUE = 3;
 
 
   public final int getNumber() {
@@ -64,6 +72,7 @@ public enum MsgType
       case 0: return LOGIN;
       case 1: return LOGOUT;
       case 2: return SEND_MSG;
+      case 3: return REGISTER;
       default: return null;
     }
   }

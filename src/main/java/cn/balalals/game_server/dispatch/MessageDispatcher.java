@@ -5,6 +5,7 @@ import cn.balalals.game_server.common.NamedThreadFactory;
 import cn.balalals.game_server.netty.handler.message.MessageHandler;
 import cn.balalals.game_server.protobuf.Msg;
 import com.google.protobuf.InvalidProtocolBufferException;
+import com.google.protobuf.Message;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Component;
@@ -17,10 +18,10 @@ import java.util.concurrent.Executors;
 
 @Component
 public class MessageDispatcher {
-    private Logger logger = LoggerFactory.getLogger(MessageHandler.class);
+    private final Logger logger = LoggerFactory.getLogger(MessageHandler.class);
     private final int CORE_SIZE = Runtime.getRuntime().availableProcessors();
-    private Hashtable<String, MessageHandler> handlerMap;
-    private ExecutorService[] executors = new ExecutorService[CORE_SIZE];
+    private Hashtable<String, MessageHandler<Message>> handlerMap;
+    private final ExecutorService[] executors = new ExecutorService[CORE_SIZE];
 
     @PostConstruct
     public void init() {
@@ -34,8 +35,8 @@ public class MessageDispatcher {
         if(handlerMap == null) {
             handlerMap = new Hashtable<>(SpringContext.getBeansOfType(MessageHandler.class));
         }
-        for (Map.Entry<String, MessageHandler> entry : handlerMap.entrySet()) {
-            MessageHandler messageHandler = entry.getValue();
+        for (Map.Entry<String, MessageHandler<Message>> entry : handlerMap.entrySet()) {
+            MessageHandler<Message> messageHandler = entry.getValue();
             if(messageHandler.getMsgType() == msg.getMsgType()) {
                 logger.info("匹配到：{}", entry.getKey());
                 InnerDispatchTask innerDispatchTask = new InnerDispatchTask(messageHandler, msg);

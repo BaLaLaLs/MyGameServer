@@ -53,9 +53,9 @@ public final class MsgOuterClass {
       "count\030\001 \001(\t\022\020\n\010password\030\002 \001(\t\"\031\n\tLogoutM" +
       "sg\022\014\n\004time\030\001 \001(\t\"-\n\010Register\022\017\n\007account\030" +
       "\001 \001(\t\022\020\n\010password\030\002 \001(\t\"\026\n\007SendMsg\022\013\n\003ms" +
-      "g\030\001 \001(\t*.\n\007MsgType\022\t\n\005LOGIN\020\000\022\n\n\006LOGOUT\020" +
-      "\001\022\014\n\010SEND_MSG\020\002B$\n cn.balalals.game_serv" +
-      "er.protobufP\001b\006proto3"
+      "g\030\001 \001(\t*<\n\007MsgType\022\t\n\005LOGIN\020\000\022\n\n\006LOGOUT\020" +
+      "\001\022\014\n\010SEND_MSG\020\002\022\014\n\010REGISTER\020\003B$\n cn.bala" +
+      "lals.game_server.protobufP\001b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
