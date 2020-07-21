@@ -1,16 +1,3 @@
-const {
-    Input,
-    CssBaseline,
-    ThemeProvider,
-    Typography,
-    Container,
-    Button,
-    makeStyles,
-    FormControl,
-    InputLabel,
-    FormHelperText,
-    Link,
-} = MaterialUI;
 function App() {
     return (
         <Container maxWidth="sm">
