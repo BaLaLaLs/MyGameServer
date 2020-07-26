@@ -25,6 +25,9 @@ public abstract class BaseRouterImpl implements IRouter {
     public Route get(String path) {
         return this.router.get(this.prefix + path);
     }
+    public Route post(String path) {
+        return this.router.post(this.prefix + path);
+    }
     @Override
     abstract public void initRouter();
 }

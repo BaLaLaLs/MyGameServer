@@ -1,19 +1,74 @@
+const useStyles = makeStyles((theme) => ({
+    paper: {
+        marginTop: theme.spacing(8),
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'center',
+    },
+    avatar: {
+        margin: theme.spacing(1),
+        backgroundColor: theme.palette.secondary.main,
+    },
+    form: {
+        width: '100%', // Fix IE 11 issue.
+        marginTop: theme.spacing(1),
+    },
+    submit: {
+        margin: theme.spacing(3, 0, 2),
+    },
+}));
+
 function App() {
+    const classes = useStyles();
+    console.log(classes.paper);
     return (
-        <Container maxWidth="sm">
-            <div style={{marginTop: 24,}}>
-                <FormControl>
-                    <InputLabel htmlFor="my-input">账号</InputLabel>
-                    <Input id="my-input" aria-describedby="my-helper-text"/>
-                    <FormHelperText id="my-helper-text">请输入您的账号</FormHelperText>
-                </FormControl>
-                <FormControl>
-                    <InputLabel htmlFor="my-pass">密码</InputLabel>
-                    <Input id="my-pass" aria-describedby="my-helper-text"/>
-                    <FormHelperText id="my-helper-text">请输入您的密码</FormHelperText>
-                </FormControl>
-            </div>
-        </Container>
+        <ThemeProvider theme={theme}>
+            <Container maxWidth="sm">
+                <div className={classes.paper}>
+                    <Typography component="h1" variant="h5">
+                        注册
+                    </Typography>
+                    <form className={classes.form} noValidate>
+                        <TextField
+                            variant="outlined"
+                            margin="normal"
+                            required
+                            fullWidth
+                            id="username"
+                            label="账号"
+                            name="username"
+                            autoFocus
+                        />
+                        <TextField
+                            variant="outlined"
+                            margin="normal"
+                            required
+                            fullWidth
+                            name="password"
+                            label="密码"
+                            type="password"
+                            id="password"
+                            autoComplete="current-password"
+                        />
+                        <Button
+                            // type="submit"
+                            fullWidth
+                            variant="contained"
+                            color="primary"
+                            onClick={async () => {
+                                console.log(await axios.post('/api/register', {
+                                    username: 'liushun',
+                                    password: 'pass'
+                                }))
+                            }}
+                            className={classes.submit}
+                        >
+                            注册
+                        </Button>
+                    </form>
+                </div>
+            </Container>
+        </ThemeProvider>
     );
 }
 
